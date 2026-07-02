@@ -481,6 +481,8 @@ a{ color:inherit; text-decoration:none; }
 .reveal.in{ opacity:1; transform:none; }
 
 /* ---------- responsive ---------- */
+.kor:empty { display: none; }
+
 @media (max-width:900px){
   .hero-grid{ grid-template-columns:1fr; gap:48px; }
   .hero{ padding:64px 0 80px; }
@@ -513,7 +515,8 @@ a{ color:inherit; text-decoration:none; }
   <div class="wrap">
     <a class="wordmark" href="#top">piecepool<span class="dot">.</span></a>
     <div class="topbar-right">
-      <span class="badge"><span class="pulse"></span>출시 전 · 첫 디거 모집 중</span>
+      <span class="badge"><span class="pulse"></span><span data-i18n="badge">출시 전 · 첫 디거 모집 중</span></span>
+      <button id="langToggle" onclick="toggleLang()" style="font-family:var(--font-mono);font-size:12px;color:var(--muted);background:none;border:1px solid var(--line);border-radius:100px;padding:5px 12px;cursor:pointer;letter-spacing:.06em;transition:color .2s,border-color .2s;" onmouseover="this.style.color='var(--text)';this.style.borderColor='var(--violet)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--line)'">한/EN</button>
       <a class="topbar-follow" href="https://instagram.com/piecepool_" target="_blank" rel="noopener">@piecepool_ ↗</a>
     </div>
   </div>
@@ -526,7 +529,7 @@ a{ color:inherit; text-decoration:none; }
     <div class="wrap hero-grid">
       <div class="reveal">
         <span class="eyebrow">사람의 안목으로 발굴하는 음악</span>
-        <h1>아직 안 뜬 곡을,<br>가장 먼저 <span class="gradtext">발굴</span>하는<br>사람들.</h1>
+        <h1><span class="gradtext">디거</span>란?<br>음악을 발굴하는 사람들.</h1>
         <p class="lede">piecepool은 알고리즘이 아니라 <strong>사람의 안목</strong>으로 묻힌 곡을 찾아내는 음악 디스커버리 서비스예요.</p>
         <div class="hero-actions">
           <a class="cta" href="https://instagram.com/piecepool_" target="_blank" rel="noopener">
@@ -588,32 +591,32 @@ a{ color:inherit; text-decoration:none; }
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">작동 방식</span>
-        <h2>한 곡이 묻힌 채로 끝나지 않게.</h2>
+        <h2 data-i18n="worksTitle">명곡이 묻힌 채로 끝나지 않게.</h2>
       </div>
       <div class="steps reveal">
         <div class="step">
           <div class="step-num">01</div>
           <h3>Dig</h3>
-          <div class="kor">발굴</div>
-          <p>아직 안 뜬 곡을 찾아 올리고, 왜 좋은지 한 마디를 남겨요. 가장 먼저 찾은 사람이 <em>First Digger</em>로 귀속돼요.</p>
+          <div class="kor" data-i18n="step1kor">발굴</div>
+          <p data-i18n="step1p">아직 안 뜬 곡을 찾아 올리고, 왜 좋은지 한 마디를 남겨요. 가장 먼저 찾은 사람이 <em>First Digger</em>로 귀속돼요.</p>
         </div>
         <div class="step">
           <div class="step-num">02</div>
-          <h3>30s → 풀곡</h3>
-          <div class="kor">미리듣기</div>
-          <p>피드에선 <em>30초</em>만 흘러요. "이거다" 싶으면 Spotify·Apple Music·YouTube로 넘어가 전곡을 들어요.</p>
+          <h3 data-i18n="step2h3">30s → 풀곡</h3>
+          <div class="kor" data-i18n="step2kor">미리듣기</div>
+          <p data-i18n="step2p">피드에선 <em>30초</em>만 흘러요. "이거다" 싶으면 Spotify·YouTube로 넘어가 전곡을 들어요.</p>
         </div>
         <div class="step">
           <div class="step-num">03</div>
           <h3>Pick</h3>
-          <div class="kor">반응</div>
-          <p>다른 사람들이 그 발굴에 공감하면 <em>Pick</em>을 눌러요. 좋아요 같은 동의예요.</p>
+          <div class="kor" data-i18n="step3kor">반응</div>
+          <p data-i18n="step3p">다른 사람들이 그 발굴에 공감하면 <em>Pick</em>을 눌러요. 좋아요 같은 동의예요.</p>
         </div>
         <div class="step">
           <div class="step-num">04</div>
           <h3>Graduation</h3>
-          <div class="kor">졸업</div>
-          <p>Pick을 충분히 모으면 <em>명예의 전당</em>으로 졸업해요. 먼저 알아본 디거의 안목이 증명되는 순간이에요.</p>
+          <div class="kor" data-i18n="step4kor">졸업</div>
+          <p data-i18n="step4p">Pick을 충분히 모으면 <em>명예의 전당</em>으로 졸업해요. 먼저 알아본 디거의 안목이 증명되는 순간이에요.</p>
         </div>
       </div>
     </div>
@@ -623,8 +626,8 @@ a{ color:inherit; text-decoration:none; }
   <section class="section philosophy">
     <div class="wrap reveal">
       <span class="eyebrow">우리가 믿는 것</span>
-      <blockquote>곡을 만든 아티스트뿐 아니라,<br>그 곡을 <span class="gradtext">먼저 발견한 디거</span>도<br>똑같이 존중받아야 한다.</blockquote>
-      <cite>— piecepool의 핵심 철학</cite>
+      <blockquote data-i18n="philosophy">아티스트를 발굴하는 건<br><span class="gradtext">디거의 몫</span>이다.</blockquote>
+      <cite data-i18n="philosophyCite">— piecepool의 핵심 철학</cite>
     </div>
   </section>
 
@@ -637,8 +640,8 @@ a{ color:inherit; text-decoration:none; }
           <h2>첫 디거를<br>찾습니다.</h2>
 
           <div class="define">
-            <span class="key">디거</span>
-            <span class="val">아직 안 알려진 좋은 곡을 먼저 찾아내는 사람.</span>
+            <span class="key" data-i18n="diggerKey">디거</span>
+            <span class="val" data-i18n="diggerDef">음악을 발굴하는 사람.</span>
           </div>
 
           <p class="note">
@@ -672,6 +675,132 @@ a{ color:inherit; text-decoration:none; }
 </footer>
 
 <script>
+  // ===== i18n =====
+  var T = {
+    ko: {
+      badge:        '출시 전 · 첫 디거 모집 중',
+      heroEyebrow:  '사람의 안목으로 발굴하는 음악',
+      heroH1:       '<span class="gradtext">디거</span>란?<br>음악을 발굴하는 사람들.',
+      heroLede:     'piecepool은 알고리즘이 아니라 <strong>사람의 안목</strong>으로 묻힌 곡을 찾아내는 음악 디스커버리 서비스예요.',
+      heroCta:      '인스타그램에서 디거 되기 <span class="arrow">→</span>',
+      heroGhost:    '디거가 뭔가요?',
+      diggerKey:    '디거',
+      overviewEy:   'piecepool이란',
+      overviewP:    '누구나 리스너이자 디거가 되어, 묻힌 곡을 먼저 찾아내는 곳.',
+      overviewBody: '곡은 30초 미리듣기로 흐르고, 마음에 들면 정식 플랫폼에서 전곡을 들어요. 사람들이 공감하면 그 곡은 Pick을 모아 졸업하고, 그걸 먼저 알아본 디거의 안목이 증명돼요. piecepool은 음악을 스트리밍하는 곳이 아니라, <span class="gradtext">발견하는 지도</span>예요.',
+      worksEy:       '작동 방식',
+      worksTitle:    '명곡이 묻힌 채로 끝나지 않게.',
+      philosophyEy:  '우리가 믿는 것',
+      philosophy:    '아티스트를 발굴하는 건<br><span class="gradtext">디거의 몫</span>이다.',
+      philosophyCite:'— piecepool의 핵심 철학',
+      recruitEy:     '디거 모집',
+      recruitH2:    '첫 디거를<br>찾습니다.',
+      diggerDef:    '음악을 발굴하는 사람.',
+      recruitNote:  'piecepool은 지금 <strong>출시 전</strong>이에요. 인스타그램에서 매일 무명 곡을 발굴해 올리며 첫 디거들을 모으고 있어요. 당신의 안목이 누군가의 다음 최애곡이 됩니다.',
+      recruitCta:   '@piecepool_ 팔로우하기 <span class="arrow">→</span>',
+      recruitSub:   '매일 새 발굴 업로드 중',
+      footerTag:    '사람의 안목으로 발굴하는 음악',
+      step1kor:     '발굴',
+      step1p:       '아직 안 뜬 곡을 찾아 올리고, 왜 좋은지 한 마디를 남겨요. 가장 먼저 찾은 사람이 <em>First Digger</em>로 귀속돼요.',
+      step2h3:      '30s → 풀곡',
+      step2kor:     '미리듣기',
+      step2p:       '피드에선 <em>30초</em>만 흘러요. "이거다" 싶으면 Spotify·YouTube로 넘어가 전곡을 들어요.',
+      step3kor:     '반응',
+      step3p:       '다른 사람들이 그 발굴에 공감하면 <em>Pick</em>을 눌러요. 좋아요 같은 동의예요.',
+      step4kor:     '졸업',
+      step4p:       'Pick을 충분히 모으면 <em>명예의 전당</em>으로 졸업해요. 먼저 알아본 디거의 안목이 증명되는 순간이에요.',
+    },
+    en: {
+      badge:        'Pre-launch · Recruiting first diggers',
+      heroEyebrow:  'Music discovered by human taste',
+      heroH1:       'What\'s a <span class="gradtext">Digger?</span><br>Someone who discovers music.',
+      heroLede:     'piecepool is a music discovery service where <strong>people — not algorithms</strong> — uncover buried tracks.',
+      heroCta:      'Become a digger on Instagram <span class="arrow">→</span>',
+      heroGhost:    "What's a digger?",
+      diggerKey:    'Digger',
+      overviewEy:   'What is piecepool',
+      overviewP:    "A place where anyone can discover buried tracks before the algorithm does.",
+      overviewBody: 'Tracks play as 30-second previews. If you love it, jump to Spotify or YouTube for the full song. When others agree, the track graduates — and the digger who found it first gets the credit. piecepool isn\'t a streaming service. It\'s a <span class="gradtext">map of discovery.</span>',
+      worksEy:       'How it works',
+      worksTitle:    'No great song should stay buried.',
+      philosophyEy:  'What we believe',
+      philosophy:    'Discovering artists<br>is <span class="gradtext">the digger\'s job.</span>',
+      philosophyCite:'— the core belief of piecepool',
+      recruitEy:     'Join as a digger',
+      recruitH2:    "We're looking for<br>first diggers.",
+      diggerDef:    'Someone who discovers music.',
+      recruitNote:  'piecepool is <strong>pre-launch</strong>. We\'re digging up unknown tracks on Instagram every day, building our first community of diggers. Your taste could become someone\'s next favorite song.',
+      recruitCta:   'Follow @piecepool_ <span class="arrow">→</span>',
+      recruitSub:   'New dig posted daily',
+      footerTag:    'Music discovered by human taste',
+      step1kor:     '',
+      step1p:       'Find an undiscovered track and drop a note on why it\'s worth hearing. The first person to post it becomes its <em>First Digger.</em>',
+      step2h3:      '30s → Full Track',
+      step2kor:     '',
+      step2p:       'Only <em>30 seconds</em> plays in the feed. If it hits — jump to Spotify or YouTube for the full song.',
+      step3kor:     '',
+      step3p:       'When others feel it too, they hit <em>Pick.</em> It\'s a nod of agreement — like a like, but for taste.',
+      step4kor:     '',
+      step4p:       'Rack up enough Picks and the track <em>graduates</em> to the Hall of Fame. The digger who found it first gets the credit.',
+    }
+  };
+
+  var KEYS = {
+    badge:        '[data-i18n="badge"]',
+    heroEyebrow:  '.hero .eyebrow',
+    heroH1:       '.hero h1',
+    heroLede:     '.hero p.lede',
+    heroCta:      '.hero .cta',
+    heroGhost:    '.hero .cta-ghost',
+    overviewEy:   '.overview .eyebrow',
+    overviewP:    '.overview p',
+    overviewBody: '.overview .body',
+    worksEy:       '.section-head .eyebrow',
+    worksTitle:    '[data-i18n="worksTitle"]',
+    philosophyEy:  '.philosophy .eyebrow',
+    philosophy:    '[data-i18n="philosophy"]',
+    philosophyCite:'[data-i18n="philosophyCite"]',
+    recruitEy:     '#recruit .eyebrow',
+    recruitH2:    '#recruit h2',
+    diggerKey:    '[data-i18n="diggerKey"]',
+    diggerDef:    '[data-i18n="diggerDef"]',
+    recruitNote:  '.recruit p.note',
+    recruitCta:   '#recruit .cta',
+    recruitSub:   '#recruit .cta-ghost',
+    footerTag:    '.footer-meta span:first-of-type',
+    step1kor:     '[data-i18n="step1kor"]',
+    step1p:       '[data-i18n="step1p"]',
+    step2h3:      '[data-i18n="step2h3"]',
+    step2kor:     '[data-i18n="step2kor"]',
+    step2p:       '[data-i18n="step2p"]',
+    step3kor:     '[data-i18n="step3kor"]',
+    step3p:       '[data-i18n="step3p"]',
+    step4kor:     '[data-i18n="step4kor"]',
+    step4p:       '[data-i18n="step4p"]',
+  };
+
+  var currentLang = navigator.language.startsWith('ko') ? 'ko' : 'en';
+
+  function applyLang(lang) {
+    currentLang = lang;
+    var t = T[lang];
+    Object.keys(KEYS).forEach(function(key) {
+      var el = document.querySelector(KEYS[key]);
+      if (el && t[key] !== undefined) el.innerHTML = t[key];
+    });
+    document.documentElement.lang = lang;
+    document.getElementById('langToggle').textContent = lang === 'ko' ? 'EN' : '한';
+  }
+
+  function toggleLang() {
+    applyLang(currentLang === 'ko' ? 'en' : 'ko');
+  }
+
+  // 자동 감지 후 적용
+  document.addEventListener('DOMContentLoaded', function() {
+    applyLang(currentLang);
+  });
+
   // waveform bars
   (function(){
     var wave = document.getElementById('wave');
